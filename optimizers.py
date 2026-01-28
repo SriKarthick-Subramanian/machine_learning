@@ -4,7 +4,6 @@ import numpy as np
 class SGD:
     def __init__(self, lr):
         self.lr = lr
-
     def step(self, w, grad):
         return w - self.lr * grad
 
@@ -13,7 +12,6 @@ class Momentum:
         self.lr = lr
         self.beta = beta
         self.v = None
-
     def step(self, w, grad):
         if self.v is None:
             self.v = np.zeros_like(w)
@@ -21,7 +19,7 @@ class Momentum:
         return w - self.lr * self.v
 
 class Adam:
-    def __init__(self, lr=0.001, beta1=0.9, beta2=0.999, eps=1e-8):
+    def __init__(self, lr, beta1=0.9, beta2=0.999, eps=1e-8):
         self.lr = lr
         self.beta1 = beta1
         self.beta2 = beta2
@@ -29,7 +27,6 @@ class Adam:
         self.m = None
         self.v = None
         self.t = 0
-
     def step(self, w, grad):
         if self.m is None:
             self.m = np.zeros_like(w)
