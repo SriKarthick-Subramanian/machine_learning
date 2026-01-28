@@ -1,0 +1,19 @@
+
+Empirical Comparison Report
+
+Dataset:
+- 100,000 samples
+- 500 sparse binary features
+
+Optimizers:
+1. Vanilla SGD: Slow but stable convergence.
+2. Momentum SGD: Faster convergence, smoother loss.
+3. Adam: Fastest convergence, highest early accuracy.
+
+Observations:
+- Adam reaches low loss in fewer epochs.
+- Momentum reduces oscillations.
+- SGD is sensitive to learning rate.
+
+Conclusion:
+Adaptive methods outperform vanilla SGD in large-scale sparse settings.
